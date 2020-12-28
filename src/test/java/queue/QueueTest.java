@@ -3,10 +3,10 @@ package queue;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 
 public class QueueTest {
     private IntAryQueue intAryQueue = new IntAryQueue(5);
+    private IntQueue intQueue = new IntQueue(5);
 
     @Test
     void enqueTest(){
@@ -17,6 +17,23 @@ public class QueueTest {
         intAryQueue.enque(5);
         intAryQueue.print();
         Assertions.assertThrows(IntAryQueue.OverflowIntQueueException.class, () -> intAryQueue.enque(6));
+    }
+
+    @Test
+    void enqueTest_intQueue(){
+        intQueue.enque(1);
+        intQueue.enque(2);
+        intQueue.enque(3);
+        intQueue.enque(4);
+        intQueue.enque(5);
+        Assertions.assertThrows(IntQueue.OverflowIntQueueException.class, () -> intQueue.enque(6));
+
+        intQueue.deque();
+        Assertions.assertEquals(1, intQueue.indexOf(2));
+        intQueue.deque();
+        Assertions.assertEquals(2, intQueue.indexOf(3));
+        System.out.println("peek : "  + intQueue.peek());
+        Assertions.assertEquals(1, intQueue.search(3));
     }
 
     @Test

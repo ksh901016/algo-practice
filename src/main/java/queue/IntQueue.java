@@ -67,4 +67,14 @@ public class IntQueue {
 
         return -1;
     }
+
+    // 큐 안에서 몇 번째에 있는 양수인가를 반환
+    public int search(int x){
+        for(int i=0; i<num; i++){
+            if(que[(front + i) % max] == x){
+                return i+1;
+            }
+        }
+        return 0;
+    }
 }
