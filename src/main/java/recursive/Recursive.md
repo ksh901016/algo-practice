@@ -19,4 +19,9 @@ Factorial.java 참고
 x = az, y = bz 를 만족하는 정수 a,b와 최대의 정수 z가 존재할 때 z를 gcd(x,y)라고 할 수 있다.<br>
 다시 말해 최대공약수는 y가 0이면 x이고, y가 0이 아니면 gcd(y, x%y)로 구한다.
 
+## 재귀 알고리즘 분석
+### 하향식(top down) 방식
+
+### 상향식(down top) 방식
+
 

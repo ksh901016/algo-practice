@@ -35,7 +35,7 @@ public class IntStack {
         if(ptr <= 0){
             throw new EmptyIntStackException();
         }
-        return stk[ptr--];
+        return stk[--ptr];
     }
 
     public int pick(){
