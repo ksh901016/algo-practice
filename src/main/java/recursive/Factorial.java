@@ -12,6 +12,14 @@ public class Factorial {
         }
     }
 
+    static int factorialNotRecursive(int n){
+        int result = 1;
+        while(n > 1){
+            result *= n--;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
@@ -19,5 +27,6 @@ public class Factorial {
         int x = stdIn.nextInt();
 
         System.out.println(x + "의 팩토리얼은 " + factorial(x) + "입니다.");
+        System.out.println(x + "의 팩토리얼은 " + factorialNotRecursive(x) + "입니다.");
     }
 }

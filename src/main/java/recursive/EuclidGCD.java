@@ -10,6 +10,15 @@ public class EuclidGCD {
             return gcd(y, x % y);
     }
 
+    static int gcdNotRecursive(int x, int y){
+        while(y != 0){
+            int temp = y;
+            y = x % y;
+            x = temp;
+        }
+        return x;
+    }
+
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
@@ -21,5 +30,6 @@ public class EuclidGCD {
         int y = stdIn.nextInt();
 
         System.out.println("최대공약수는 " + gcd(x, y) + " 입니다.");
+        System.out.println("최대공약수는 " + gcdNotRecursive(x, y) + " 입니다.");
     }
 }
